@@ -25,6 +25,7 @@ jobs:
 
       - name: Install lace
         run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq minisign
           curl -fsSL https://releases.lace.cloud/install.sh | LACE_INSTALL_DIR="$RUNNER_TEMP/bin" sh
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
 
