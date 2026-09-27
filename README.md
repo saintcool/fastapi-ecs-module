@@ -11,7 +11,7 @@ wired once instead of by hand each time.
 
 ```hcl
 module "api" {
-  source  = "lace.cloud/northwind-labs/fastapi-ecs-service/aws"
+  source  = "lace.cloud/rehearsal-001/fastapi-ecs-service/aws"
   version = "1.0.1"
 
   app_name           = "my-service"
