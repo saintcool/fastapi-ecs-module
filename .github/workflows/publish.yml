@@ -23,26 +23,9 @@ jobs:
         with:
           path: module
 
-      # The released CLI predates the module publish protocol preview
-      # enforces, so build lace from develop.
-      - name: Check out lace
-        uses: actions/checkout@v4
-        with:
-          repository: lace-cloud/lace
-          ref: develop
-          token: ${{ secrets.LACE_REPO_TOKEN }}
-          path: lace-src
-          sparse-checkout: apps/cli
-
-      - uses: actions/setup-go@v5
-        with:
-          go-version-file: lace-src/apps/cli/go.mod
-          cache-dependency-path: lace-src/apps/cli/go.sum
-
-      - name: Build lace
-        working-directory: lace-src/apps/cli
+      - name: Install lace
         run: |
-          CGO_ENABLED=0 go build -o "$RUNNER_TEMP/bin/lace" .
+          curl -fsSL https://releases.lace.cloud/install.sh | LACE_INSTALL_DIR="$RUNNER_TEMP/bin" sh
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
 
       - uses: hashicorp/setup-terraform@v3
