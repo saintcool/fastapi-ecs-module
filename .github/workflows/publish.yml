@@ -16,7 +16,7 @@ jobs:
     env:
       LACE_AUTH_URL: https://preview.lace.cloud
       LACE_API_KEY: ${{ secrets.LACE_API_KEY }}
-      LACE_ORGANIZATION: alicenter
+      LACE_ORGANIZATION: northwind-labs
     steps:
       - name: Check out module
         uses: actions/checkout@v4

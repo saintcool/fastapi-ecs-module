@@ -1,6 +1,6 @@
 apiVersion: '1'
 axis: module
-author: alicenter
+author: northwind-labs
 name: fastapi-ecs-service
 version: v1.0.1
 displayName: "FastAPI on ECS Fargate"
