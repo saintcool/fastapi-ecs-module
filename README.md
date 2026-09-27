@@ -11,7 +11,8 @@ wired once instead of by hand each time.
 
 ```hcl
 module "api" {
-  source = "git::https://github.com/saintcool/fastapi-ecs-module.git?ref=v1.0.1"
+  source  = "lace.cloud/alicenter/fastapi-ecs-service/aws"
+  version = "1.0.1"
 
   app_name           = "my-service"
   aws_region         = "us-east-1"

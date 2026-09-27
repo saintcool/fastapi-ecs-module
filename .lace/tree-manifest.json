@@ -1,5 +1,5 @@
 {
-  "treeHash": "09ef50ed35d1177c37fa8491406d642a3d5b81c313bd4d2a4dbcce7e467f36cd",
+  "treeHash": "e104eb0b1e8010cc49f1c2f7cdf16f4dead6e6989645e19fa3eab108df1584cd",
   "entries": [
     {
       "rel": ".gitignore",
@@ -10,8 +10,8 @@
     {
       "rel": "README.md",
       "exec": false,
-      "size": 1687,
-      "sha256": "8685d92911567110ae6575d7bebb45bccffb45c80cbce9112cf4ca7027703aac"
+      "size": 1685,
+      "sha256": "8b72169092416ac4b6fe78421ea6f9703e6eaa9bf97f782b2c54bbe6ad331304"
     },
     {
       "rel": "main.tf",
@@ -22,8 +22,8 @@
     {
       "rel": "manifest.yaml",
       "exec": false,
-      "size": 1085,
-      "sha256": "5e0617339b29521c6e0bfee25eff5391227eb5b8f83e4a222e781c5cae2d7fd9"
+      "size": 624,
+      "sha256": "3484ff50fe7f4970bc33fca8e6f0943966a8fed46dcf041e71f7c3debd6f954c"
     },
     {
       "rel": "outputs.tf",
