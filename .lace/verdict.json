@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1",
+  "verdict": "already-lace-style",
+  "tfContentHash": "217abb19d2a8deb50e6f17240b5f2001adbb93ec564d00143f83344061aef718",
+  "bundle": {
+    "length": 10579,
+    "sha256": "0eb04dad1a2f86be27f48dcf1111270a416c589166dfce5c963e220d34efe71d"
+  }
+}

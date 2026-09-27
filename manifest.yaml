@@ -1,0 +1,29 @@
+apiVersion: '1'
+axis: module
+author: keyvhinng
+name: fastapi-ecs-service
+version: v1.0.0
+displayName: "FastAPI on ECS Fargate"
+description: "A load-balanced Fargate service behind an ALB, with its own ECR repository and CloudWatch log group. Composes nine registry primitives (ALB, target group, listener, security groups, ECS cluster/service/task definition, ECR, log group) into the one stack a new HTTP service actually needs."
+categories: [compute, containers, aws]
+configSchema:
+  type: object
+  additionalProperties: true
+runtime:
+  location: in-tree
+authors: ["Keyvhinng <keyvhinng@gmail.com>"]
+bundle:
+  system: aws
+  modulePath: .
+  gitUrl: https://github.com/saintcool/fastapi-ecs-module.git
+  gitTag: v1.0.0
+  example: |
+    module "api" {
+      source = "git::https://github.com/saintcool/fastapi-ecs-module.git?ref=v1.0.0"
+
+      app_name           = "my-service"
+      aws_region         = "us-east-1"
+      vpc_id             = "vpc-0123456789abcdef0"
+      public_subnet_ids  = ["subnet-aaa", "subnet-bbb"]
+      private_subnet_ids = ["subnet-ccc", "subnet-ddd"]
+    }
