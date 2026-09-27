@@ -1,8 +1,8 @@
 apiVersion: '1'
 axis: module
-author: keyvhinng
+author: alicenter
 name: fastapi-ecs-service
-version: v1.0.0
+version: v1.0.1
 displayName: "FastAPI on ECS Fargate"
 description: "A load-balanced Fargate service behind an ALB, with its own ECR repository and CloudWatch log group. Composes nine registry primitives (ALB, target group, listener, security groups, ECS cluster/service/task definition, ECR, log group) into the one stack a new HTTP service actually needs."
 categories: [compute, containers, aws]
@@ -16,10 +16,10 @@ bundle:
   system: aws
   modulePath: .
   gitUrl: https://github.com/saintcool/fastapi-ecs-module.git
-  gitTag: v1.0.0
+  gitTag: v1.0.1
   example: |
     module "api" {
-      source = "git::https://github.com/saintcool/fastapi-ecs-module.git?ref=v1.0.0"
+      source = "git::https://github.com/saintcool/fastapi-ecs-module.git?ref=v1.0.1"
 
       app_name           = "my-service"
       aws_region         = "us-east-1"

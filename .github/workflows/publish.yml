@@ -1,0 +1,60 @@
+name: Publish
+
+# Publishes this module to the Lace registry. Lace only accepts a module
+# publish from a GitHub Actions job: it verifies the job's OIDC token and
+# records this repository and commit as the module's provenance.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      LACE_AUTH_URL: https://preview.lace.cloud
+      LACE_API_KEY: ${{ secrets.LACE_API_KEY }}
+      LACE_ORGANIZATION: ${{ secrets.LACE_ORGANIZATION }}
+    steps:
+      - name: Check out module
+        uses: actions/checkout@v4
+        with:
+          path: module
+
+      # The released CLI predates the module publish protocol preview
+      # enforces, so build lace from develop.
+      - name: Check out lace
+        uses: actions/checkout@v4
+        with:
+          repository: lace-cloud/lace
+          ref: develop
+          token: ${{ secrets.LACE_REPO_TOKEN }}
+          path: lace-src
+          sparse-checkout: apps/cli
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: lace-src/apps/cli/go.mod
+          cache-dependency-path: lace-src/apps/cli/go.sum
+
+      - name: Build lace
+        working-directory: lace-src/apps/cli
+        run: |
+          CGO_ENABLED=0 go build -o "$RUNNER_TEMP/bin/lace" .
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Certify
+        run: lace module validate --path module
+
+      - name: Publish
+        run: |
+          lace registry register --axis module \
+            --manifest module/manifest.yaml \
+            --readme   module/README.md \
+            --path     module

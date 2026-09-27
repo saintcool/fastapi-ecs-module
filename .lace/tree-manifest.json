@@ -1,0 +1,47 @@
+{
+  "treeHash": "09ef50ed35d1177c37fa8491406d642a3d5b81c313bd4d2a4dbcce7e467f36cd",
+  "entries": [
+    {
+      "rel": ".gitignore",
+      "exec": false,
+      "size": 50,
+      "sha256": "52d411bc9033789ed884fbd091ec72fce926b61d27ff785c038c564a5adfa2c3"
+    },
+    {
+      "rel": "README.md",
+      "exec": false,
+      "size": 1687,
+      "sha256": "8685d92911567110ae6575d7bebb45bccffb45c80cbce9112cf4ca7027703aac"
+    },
+    {
+      "rel": "main.tf",
+      "exec": false,
+      "size": 5214,
+      "sha256": "5c181ac50abc6482cf6ec9f31c9048b2abb44555439a924b2359dbe131067e49"
+    },
+    {
+      "rel": "manifest.yaml",
+      "exec": false,
+      "size": 1085,
+      "sha256": "5e0617339b29521c6e0bfee25eff5391227eb5b8f83e4a222e781c5cae2d7fd9"
+    },
+    {
+      "rel": "outputs.tf",
+      "exec": false,
+      "size": 721,
+      "sha256": "3dd5f8558e87c7bc70e2f6b7e729a375b713ba6f220cb0e5d2e92385cca1da58"
+    },
+    {
+      "rel": "variables.tf",
+      "exec": false,
+      "size": 1531,
+      "sha256": "d4ca3100b0b126361be5c30d55fd48fbd3c382a66c5436c1e3adccb3350fd561"
+    },
+    {
+      "rel": "versions.tf",
+      "exec": false,
+      "size": 146,
+      "sha256": "080fa1843415cfdab50e12f7b966543da1c9f112f8f1cef1d39c58b03fbfbc84"
+    }
+  ]
+}

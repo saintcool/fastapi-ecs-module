@@ -1,9 +1,11 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "3",
+  "treeHash": "09ef50ed35d1177c37fa8491406d642a3d5b81c313bd4d2a4dbcce7e467f36cd",
   "verdict": "already-lace-style",
-  "tfContentHash": "217abb19d2a8deb50e6f17240b5f2001adbb93ec564d00143f83344061aef718",
+  "certifierVersion": "dev",
   "bundle": {
     "length": 10579,
     "sha256": "0eb04dad1a2f86be27f48dcf1111270a416c589166dfce5c963e220d34efe71d"
-  }
+  },
+  "modules": []
 }
